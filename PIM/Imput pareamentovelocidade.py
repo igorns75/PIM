@@ -15,21 +15,21 @@ import matplotlib.pyplot as plt
 
 # Library for reading and manipulating XML files
 import xml.etree.ElementTree as ET
-!pip install xmltodict
+#!pip install xmltodict
 import xmltodict
 
 # Library for handling Excel files (.xls, .xlsx)
-!pip install xlwt
+#!pip install xlwt
 import xlwt
 
 # Library for geospatial data manipulation
 from bs4 import BeautifulSoup
-!pip install geopandas
+#!pip install geopandas
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
 
 # Library for reading geospatial files (shapefiles, etc.)
-!pip install fiona
+#!pip install fiona
 import fiona
 
 # Library for date and time manipulation
@@ -39,7 +39,7 @@ import xlwt
 # Define the current directory as a string
 dirGr = str(pathlib.Path().resolve())+'/'
 
-!pip install PyAstronomy
+#!pip install PyAstronomy
 from PyAstronomy import pyasl
 import matplotlib.pylab as plt
 import datetime
@@ -108,7 +108,7 @@ def listar_arquivos_xml(dirGr : str) -> list[str]:
     # Returns the sorted list
     return listaCamera
 
-dirGr = "/home/felipe/Desktop/TG"
+dirGr = "/home/linux/Área de trabalho/Rodar_PIM/Rodar_Progama"
 arquivos_xml = listar_arquivos_xml(dirGr)
 print(arquivos_xml)
 
@@ -188,7 +188,7 @@ def processar_arquivos_xml(dirGr : str, listaCamera : list [str]) -> dict[str, s
 
     return flare
 
-dirGr = "/home/felipe/Desktop/TG/"
+dirGr = "/home/linux/Área de trabalho/Rodar_PIM/Rodar_Progama"
 listaCamera = ['vulcano2(2).XML', 'turrialba(3).XML', 'sanRamon.XML', 'sanJose.XML', 'queops(1).XML', 'heredia2.XML', 'heredia1(1).XML']  # Lista com os arquivos XML
 
 # Call the function
@@ -245,8 +245,8 @@ def load_camera_data(file_list : str, base_dir : str)-> tuple[str , str]:
 dfP, dfF = load_camera_data(listaCamera, dirGr)
 
 # Display examples
-display(dfP[2])
-display(dfF[0])
+#display(dfP[2])
+#display(dfF[0])
 print(dfF[0].info())
 
 import pandas as pd
@@ -357,7 +357,7 @@ def generate_flare_dataframe(camera_data : List[Dict[str, List[float]]], flare_d
 
 custom_instants = [0.25]
 dfR = generate_flare_dataframe(dfP, dfF, flare_dict, instants=custom_instants)
-display(dfR)
+#display(dfR)
 
 import pandas as pd
 
@@ -398,7 +398,7 @@ def configure_event_parameters(df_result, show_dataframe=True) -> Dict[str, Unio
     >>> print(config['dirRun'])
     'costaRica2019FlareA/'
     """
-    dirGr2 = '/home/felipe/Desktop/TG/'
+    dirGr2 = '/home/linux/Área de trabalho/Rodar_PIM/Rodar_Progama'
     dirRun = 'costaRica2019FlareA/'
     dateM = [2019, 4, 24, 3, 7, 24]
     opcao = 3
@@ -409,8 +409,8 @@ def configure_event_parameters(df_result, show_dataframe=True) -> Dict[str, Unio
 
     df = df_result
 
-    if show_dataframe:
-        display(df)
+    #if show_dataframe:
+        #display(df)
 
     return {
         'dirGr2': dirGr2,
@@ -692,7 +692,7 @@ def generate_configuration_files(df, dirGr2, dirRun, standard, dateM,
 
 pairs_processed = generate_configuration_files(
     df=dfR,
-    dirGr2='/home/felipe/Desktop/TG/',
+    dirGr2="/home/linux/Área de trabalho/Rodar_PIM/Rodar_Progama",
     dirRun='costaRica2019FlareA/',
     standard=standard,
     dateM=[2019, 4, 24, 3, 7, 24],
