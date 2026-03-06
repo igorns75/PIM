@@ -531,7 +531,7 @@ def export_results_and_read_standard(df, dirGr2 : str, dirRun : str, standard_fi
     print(f"Data saved to: {dirGr2}")
     return standard
 
-standard = export_results_and_read_standard(dfR, '/home/felipe/Desktop/TG/', 'costaRica2019FlareA/')
+standard = export_results_and_read_standard(dfR, '/home/linux/Área de trabalho/Rodar_PIM/Rodar_Progama/', 'costaRica2019FlareA/')
 
 import os
 import shutil
