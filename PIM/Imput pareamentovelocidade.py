@@ -251,7 +251,7 @@ print(dfF[0].info())
 
 import pandas as pd
 
-def generate_flare_dataframe(camera_data : List[Dict[str, List[float]]], flare_dataframes : List[pd.DataFrame], flare_id_map : Dict[str, int], instants=None) -> pd.DataFrame:
+def generate_flare_dataframe(camera_data : list[dict[str, list[float]]], flare_dataframes : list[pd.DataFrame], flare_id_map : dict[str, int], instants=None) -> pd.DataFrame:
     """
     Generates a DataFrame summarizing camera observations of flare events at multiple time offsets before each flare.
 
@@ -361,7 +361,7 @@ dfR = generate_flare_dataframe(dfP, dfF, flare_dict, instants=custom_instants)
 
 import pandas as pd
 
-def configure_event_parameters(df_result, show_dataframe=True) -> Dict[str, Union[str, int, List[int], pd.DataFrame]]:
+def configure_event_parameters(df_result, show_dataframe=True) -> dict[str, Union[str, int, list[int], pd.DataFrame]]:
     """
     Configures file paths and physical parameters for a meteor flare event,
     and optionally displays the resulting DataFrame.
