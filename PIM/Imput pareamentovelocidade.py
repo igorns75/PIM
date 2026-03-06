@@ -189,7 +189,7 @@ def processar_arquivos_xml(dirGr : str, listaCamera : list [str]) -> dict[str, s
     return flare
 
 dirGr = "/home/linux/Área de trabalho/Rodar_PIM/Rodar_Progama"
-listaCamera = ['vulcano2(2).XML', 'turrialba(3).XML', 'sanRamon.XML', 'sanJose.XML', 'queops(1).XML', 'heredia2.XML', 'heredia1(1).XML']  # Lista com os arquivos XML
+listaCamera = ['arquivo1.XML', 'arquivo2.XML']  # Lista com os arquivos XML
 
 # Call the function
 flare_dict = processar_arquivos_xml(dirGr, listaCamera)
