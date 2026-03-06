@@ -46,7 +46,7 @@ import datetime
 
 import numpy as np
 
-def convEqToHor(y : int, m : int, d : int, ho : int, mi : int, se : int, alt : float, lon : float, lat : float, ra : float, dec : float) -> tuple[float , float]:
+def convEqToHor(y : int, m : int, d : int, ho : int, mi : int, se : int, alt : float, lon : float, lat : float, ra : float, dec : float): #-> tuple[float , float]:
   """
     Converts equatorial coordinates (Right Ascension and Declination) to
     horizontal coordinates (Azimuth and Altitude) for a given date, time,
@@ -82,7 +82,7 @@ def convEqToHor(y : int, m : int, d : int, ho : int, mi : int, se : int, alt : f
 
 import os
 
-def listar_arquivos_xml(dirGr : str) -> list[str]:
+def listar_arquivos_xml(dirGr : str): # -> list[str]:
     """
     Parameters:
     dirGr (str): Path to the directory where the XML files are located.
@@ -114,7 +114,7 @@ print(arquivos_xml)
 
 import xmltodict
 
-def processar_arquivos_xml(dirGr : str, listaCamera : list [str]) -> dict[str, str]:
+def processar_arquivos_xml(dirGr : str, listaCamera : list [str]): #-> dict[str, str]:
     """
     dirGr (str): Path to the directory where the XML files are located.
     listaCamera (list): List containing the names of the XML files to be processed.
@@ -199,7 +199,7 @@ print(flare_dict)
 
 import pandas as pd
 
-def load_camera_data(file_list : str, base_dir : str)-> tuple[str , str]:
+def load_camera_data(file_list : str, base_dir : str): #-> tuple[str , str]:
     """
     Loads and processes position and frame data for a list of camera files.
 
@@ -251,7 +251,7 @@ print(dfF[0].info())
 
 import pandas as pd
 
-def generate_flare_dataframe(camera_data : list[dict[str, list[float]]], flare_dataframes : list[pd.DataFrame], flare_id_map : dict[str, int], instants=None) -> pd.DataFrame:
+def generate_flare_dataframe(camera_data : list[dict[str, list[float]]], flare_dataframes : list[pd.DataFrame], flare_id_map : dict[str, int], instants=None): #-> pd.DataFrame:
     """
     Generates a DataFrame summarizing camera observations of flare events at multiple time offsets before each flare.
 
@@ -361,7 +361,7 @@ dfR = generate_flare_dataframe(dfP, dfF, flare_dict, instants=custom_instants)
 
 import pandas as pd
 
-def configure_event_parameters(df_result, show_dataframe=True) -> dict[str, Union[str, int, list[int], pd.DataFrame]]:
+def configure_event_parameters(df_result, show_dataframe=True): #-> dict[str, Union[str, int, list[int], pd.DataFrame]]:
     """
     Configures file paths and physical parameters for a meteor flare event,
     and optionally displays the resulting DataFrame.
@@ -433,7 +433,7 @@ print("Density:", config['densMeteor'])
 import os
 import pandas as pd
 
-def save_event_data(df : pd.DataFrame, dirGr2 : str, dirRun : str, standard_filename : str="standard.txt") -> standard [str]:
+def save_event_data(df : pd.DataFrame, dirGr2 : str, dirRun : str, standard_filename : str="standard.txt"): #-> standard [str]:
     """
     Saves the processed meteor event DataFrame to an Excel file, creates necessary directories,
     and reads a standard configuration file from disk.
@@ -485,7 +485,7 @@ standard_txt = save_event_data(config['df'], config['dirGr2'], config['dirRun'])
 import os
 import pandas as pd
 
-def export_results_and_read_standard(df, dirGr2 : str, dirRun : str, standard_filename : str ="standard.txt") -> standard [str]:
+def export_results_and_read_standard(df, dirGr2 : str, dirRun : str, standard_filename : str ="standard.txt"): #-> standard [str]:
     """
     Reads a standard configuration file, creates output directories if needed,
     and exports the given DataFrame to an Excel file.
